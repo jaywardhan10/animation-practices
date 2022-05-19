@@ -118,6 +118,35 @@
                 width: calc(100% + 27px);
                 height: calc(100% + 27px);
             }
+
+            .typingWrapper{
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .typingDemo{
+                width: 22ch;
+                animation: typing 4s steps(22), blink .5s step-end infinite alternate;
+                white-space: nowrap;
+                overflow: hidden;
+                border-right: 3px solid;
+                font-family: monospace;
+                font-size: 2em;
+            }
+            @keyframes typing {
+                from{
+                    width: 0;
+                }
+                
+            }
+            @keyframes blink {
+                50% {
+                    border-color: transparent;
+                }
+            }
+
         </style>
 
     </head>
@@ -147,10 +176,18 @@
 </div>
 <!-- card code end here -->
 <br/>
-<!-- border hover effect -->
+<!-- border hover effect start here -->
 <button class="hoverBtn">
     Hover me
 </button>
+<!-- button hover effect end here -->
 
+
+<!-- typing effect start here -->
+<div class="typingWrapper">
+    <div class="typingDemo">
+        this is typing demo.
+    </div>
+</div>
     </body>
 </html>
