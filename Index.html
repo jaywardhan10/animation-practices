@@ -8,6 +8,7 @@
                 width: 50px;
                 height: 50px;
                 cursor: pointer;
+                display: none;
             }
             input{
                 position: absolute;
@@ -39,6 +40,7 @@
                 color: black;
                 cursor: pointer;
                 position: relative;
+                display: none;
             }
             .shadowBtn::before{
                 content: '';
@@ -62,15 +64,93 @@
                 color: white;
                 transition: 1s ease;
             }
+
+            .card{
+                display: flex;
+                flex-wrap: wrap;
+                border: 1px solid #ccc;
+                display: none;
+            }
+            .image{
+                flex: 1 1 120px;
+                aspect-ratio: 1/1;
+            }
+            .content{
+                flex: 1 1 200px;
+            }
+            .content h1, p{
+                margin: 0px;
+            }
+
+            .hoverBtn{
+                height: 4rem;
+                width: 9rem;
+                border: 3px solid deepskyblue;
+                background: transparent;
+                color: black;
+                font-weight: bold;
+                position: relative;
+                cursor: pointer;
+
+                margin: 40px;
+            }
+            .hoverBtn::before,
+            .hoverBtn::after{
+                content: '';
+                position: absolute;
+                width: 48px;
+                height: 48px;
+                border: inherit;
+                transition: 0.3s ease;
+            }
+            .hoverBtn::before{
+                left: -15px;
+                top: -15px;
+                border-width: 3px 0 0 3px;
+            }
+            .hoverBtn::after{
+                right: -15px;
+                bottom: -15px;
+                border-width: 0 3px 3px 0;
+            }
+            .hoverBtn:hover:before,
+            .hoverBtn:hover::after{
+                width: calc(100% + 27px);
+                height: calc(100% + 27px);
+            }
         </style>
 
     </head>
     <body>
+        <!-- animation checkboc start here -->
         <label>
             <input type="checkbox" />
             <span class="checkbox"></span>
         </label>
+        <!-- animation checkbox end here -->
 
+        <!-- shadow Button start here -->
         <button class="shadowBtn">Hover shadow</button>
+        <!-- shadow Button end here -->
+
+<!-- card code start here -->
+<div class="card">
+    <div class="image">
+        <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/1b4917151ab348868e4aad7a00921b60_9366/Superstar_Shoes_White_GW0570_01_standard.jpg" alt="" />
+    </div>
+    <div class="content">
+        <H1>shoes</H1>
+        <p>
+            Explore from our range of differnt brand 
+        </p>
+    </div>
+</div>
+<!-- card code end here -->
+<br/>
+<!-- border hover effect -->
+<button class="hoverBtn">
+    Hover me
+</button>
+
     </body>
 </html>
